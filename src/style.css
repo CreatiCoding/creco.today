@@ -9,6 +9,8 @@ body {
 @media (min-width: 900px) {
   #app {
     width: 900px;
+  }
+  #header {
     padding: 10px 75px 10px 75px;
   }
 }
@@ -35,7 +37,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 10px;
+  padding: 10px 75px 10px 75px;
   background: #ffffff;
 }
 
