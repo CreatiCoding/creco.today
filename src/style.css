@@ -2,10 +2,17 @@ body {
   margin: 0;
 }
 #app {
-  width: 900px;
   margin: 0 auto;
   padding-top: 80px;
 }
+
+@media (min-width: 900px) {
+  #app {
+    width: 900px;
+    padding: 10px 75px 10px 75px;
+  }
+}
+
 #app.markdown-body h1 {
   padding: 0;
   display: inline-block;
@@ -28,7 +35,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 10px 75px 10px 75px;
+  padding: 10px;
   background: #ffffff;
 }
 
