@@ -1,0 +1,15 @@
+#app.markdown-body h1 {
+  padding: 0;
+  display: inline-block;
+  border-bottom: solid 10px lightgreen;
+}
+#app.markdown-body h2 {
+  border-bottom: unset;
+  text-decoration: underline 4px;
+  text-decoration-color: lightgreen;
+}
+#app.markdown-body ol,
+#app.markdown-body ul {
+  padding-left: 1.5em;
+  border-left: solid 4px greenyellow;
+}
