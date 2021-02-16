@@ -8,7 +8,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const url = window.location.href.replace(window.location.origin, "");
 const alias = url.split("/")[1];
-const path = url.replace(`/${alias}`, "");
+let path = url.replace(`/${alias}`, "");
 const pathname = window.location.pathname;
 const domain = {
   leetcode: "https://data.creco.today/DailyLeetCodeJS",
@@ -21,7 +21,8 @@ function load() {
   });
   const result = document.querySelector("#app");
   result.classList.add("markdown-body");
-  fetch(`${domain[alias || "main"]}${path || "/README.md"}`)
+  path = path === "/" ? "/README.md" : path || "/README.md";
+  fetch(`${domain[alias || "main"]}${path}`)
     .then((response) => response.text())
     .then((data) => {
       document.title =
