@@ -1,11 +1,13 @@
 import showdown from "showdown";
 import "./style.css";
 import "github-markdown-css/github-markdown.css";
+import Profile from "./profile.png";
 
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
-
+const App = document.querySelector("#app");
+const Header = document.querySelector("#header");
 const url = window.location.href.replace(window.location.origin, "");
 const alias = url.split("/")[1];
 let path = url.replace(`/${alias}`, "");
@@ -19,8 +21,7 @@ function load() {
     simplifiedAutoLink: true,
     strikethrough: true,
   });
-  const result = document.querySelector("#app");
-  result.classList.add("markdown-body");
+  App.classList.add("markdown-body");
   path = path === "/" ? "/README.md" : path || "/README.md";
   fetch(`${domain[alias || "main"]}${path}`)
     .then((response) => response.text())
@@ -30,9 +31,26 @@ function load() {
           .split("/")
           .filter((e) => e)
           .pop() || "Creco";
-      result.innerHTML = sdconv.makeHtml(data);
+      App.innerHTML = sdconv.makeHtml(data);
     });
 }
+
+const profile = new Image();
+profile.src = Profile;
+Header.append(profile);
+const Label = (className, html, fc) => {
+  const el = document.createElement("div");
+  el.innerHTML = html;
+  el.className = className;
+  el.onclick = fc;
+  return el;
+};
+Header.append(
+  Label("name text", "CreatiCoding", function () {
+    window.location.href = "https://github.com/CreatiCoding";
+  })
+);
+Header.append(Label("share text", "Hello", function () {}));
 load();
 window.addEventListener(
   "hashchange",
