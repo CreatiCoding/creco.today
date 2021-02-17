@@ -20,4 +20,9 @@ div.markdown-body {
       border-radius: 10px;
     }
   }
+  p {
+    img {
+      max-width: 100%;
+    }
+  }
 }
