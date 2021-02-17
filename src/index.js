@@ -1,7 +1,9 @@
 import showdown from "showdown";
 import "./style.css";
-import "github-markdown-css/github-markdown.css";
 import Profile from "./profile.png";
+import "./md.scss";
+import hljs from "highlight.js";
+import "highlight.js/scss/agate.scss";
 
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
@@ -23,7 +25,11 @@ function load() {
   });
   App.classList.add("markdown-body");
   path = path === "/" ? "/README.md" : path || "/README.md";
-  fetch(`${domain[alias || "main"]}${path}`)
+  let target = `${domain[alias || "main"]}${path}`;
+  if (window.location.search.indexOf("test") !== -1) {
+    target = domain["leetcode"] + "/day-01.md";
+  }
+  fetch(target)
     .then((response) => response.text())
     .then((data) => {
       document.title =
@@ -32,6 +38,7 @@ function load() {
           .filter((e) => e)
           .pop() || "Creco";
       App.innerHTML = sdconv.makeHtml(data);
+      hljs.highlightAll();
     });
 }
 
