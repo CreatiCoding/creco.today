@@ -23,6 +23,7 @@ function load() {
   var sdconv = new showdown.Converter({
     simplifiedAutoLink: true,
     strikethrough: true,
+    tables: true,
   });
   App.classList.add("markdown-body");
   path = path === "/" ? "/README.md" : path || "/README.md";
