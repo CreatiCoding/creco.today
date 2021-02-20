@@ -4,7 +4,7 @@ import Profile from "./profile.png";
 import "./md.scss";
 import hljs from "highlight.js";
 import "highlight.js/scss/agate.scss";
-
+import "./gtag.js";
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
