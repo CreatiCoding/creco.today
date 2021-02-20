@@ -12,7 +12,9 @@ div.markdown-body {
   h1 {
     padding: 0;
     display: inline-block;
-    border-bottom: solid 10px lightgreen;
+    text-decoration: underline;
+    text-decoration-color: lightgreen;
+    text-underline-offset: 4px;
   }
   pre {
     code {
