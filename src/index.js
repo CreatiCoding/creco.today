@@ -44,7 +44,6 @@ function load() {
 
 const profile = new Image();
 profile.src = Profile;
-Header.append(profile);
 const Label = (className, html, fc) => {
   const el = document.createElement("div");
   el.innerHTML = html;
@@ -52,12 +51,15 @@ const Label = (className, html, fc) => {
   el.onclick = fc;
   return el;
 };
-Header.append(
-  Label("name text", "CreatiCoding", function () {
-    window.location.href = "https://github.com/CreatiCoding";
-  })
-);
-Header.append(Label("share text", "Hello", function () {}));
+const Wrapper = document.createElement("div");
+Wrapper.style = "max-width: 760px;margin: 0 auto;";
+const LeftHeader = Label("", "", function () {
+  window.location.href = "https://github.com/CreatiCoding";
+});
+const RightHeader = Label("share text", "Hello", function () {});
+LeftHeader.append(profile, Label("name text", "CreatiCoding"));
+Header.appendChild(Wrapper).append(LeftHeader, RightHeader);
+
 load();
 window.addEventListener(
   "hashchange",
