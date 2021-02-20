@@ -32,11 +32,13 @@ function load() {
   fetch(target)
     .then((response) => response.text())
     .then((data) => {
-      document.title =
+      const title =
         pathname
           .split("/")
           .filter((e) => e)
-          .pop() || "Creco";
+          .pop() || "CRECO";
+      const prefix = alias.toUpperCase() || "HOME";
+      document.title = `${prefix} | ${title}`;
       App.innerHTML = sdconv.makeHtml(data);
       hljs.highlightAll();
     });
