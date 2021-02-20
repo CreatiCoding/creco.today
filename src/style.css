@@ -6,7 +6,7 @@ body {
   padding-top: 60px;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 760px) {
   #app {
     max-width: 760px;
   }
