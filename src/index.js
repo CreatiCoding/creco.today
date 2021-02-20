@@ -17,6 +17,7 @@ const pathname = window.location.pathname;
 const domain = {
   leetcode: "https://data.creco.today/DailyLeetCodeJS",
   main: "https://data.creco.today/CreatiCoding",
+  about: "https://data.creco.today/about",
 };
 function load() {
   var sdconv = new showdown.Converter({
