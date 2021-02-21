@@ -79,7 +79,9 @@ Wrapper.style = "max-width: 760px;margin: 0 auto;";
 const LeftHeader = Label("", "", function () {
   window.location.href = "https://github.com/CreatiCoding";
 });
-const RightHeader = Label("share text", "Hello", function () {});
+const RightHeader = Label("share text", "About Me", function () {
+  window.location.href = "https://creco.today/about";
+});
 LeftHeader.append(profile, Label("name text", "CreatiCoding"));
 Header.appendChild(Wrapper).append(LeftHeader, RightHeader);
 
