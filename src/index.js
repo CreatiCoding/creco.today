@@ -20,15 +20,15 @@ const domain = {
   about: "https://data.creco.today/about",
 };
 function loadComment() {
-  document.body.innerHTML += `<script
-      src="https://utteranc.es/client.js"
-      repo="CreatiCoding/creco.today"
-      issue-term="pathname"
-      label="💬"
-      theme="github-light"
-      crossorigin="anonymous"
-      async
-    ></script>`;
+  const s = document.createElement("script");
+  s.src = "https://utteranc.es/client.js";
+  s.setAttribute("repo", "CreatiCoding/creco.today");
+  s.setAttribute("issue-term", "pathname");
+  s.setAttribute("label", "💬");
+  s.setAttribute("theme", "github-light");
+  s.setAttribute("crossorigin", "anonymous");
+  s.setAttribute("async", true);
+  document.body.appendChild(s);
 }
 function load() {
   var sdconv = new showdown.Converter({
