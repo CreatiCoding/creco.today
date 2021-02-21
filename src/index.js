@@ -38,8 +38,7 @@ function load() {
   });
   App.classList.add("markdown-body");
   path = path === "/" ? "/README.md" : path || "/README.md";
-
-  if (!domain[alias]) {
+  if (window.location.href !== "https://creco.today/" && !domain[alias]) {
     path = "/404/README.md";
   }
   let target = `${domain[alias] || domain["main"]}${path}`;
