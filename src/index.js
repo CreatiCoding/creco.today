@@ -46,7 +46,7 @@ async function getData() {
   }
   const res = await fetch(target);
   const data = await res.text();
-  if (data.indexOf("AccessDenied") !== -1) {
+  if (data.indexOf("AccessDenied") !== -1 && target.split("").pop() === "/") {
     target += "README.md";
     const res = await fetch(target);
     const data = await res.text();
