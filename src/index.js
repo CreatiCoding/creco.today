@@ -20,6 +20,10 @@ const domain = {
   about: "https://data.creco.today/about",
   blog: "https://data.creco.today/blog",
 };
+const is404 =
+  window.location.href !== "https://creco.today/" &&
+  window.location.href !== "http://localhost:8080/" &&
+  !domain[alias];
 function loadComment() {
   const s = document.createElement("script");
   s.src = "https://utteranc.es/client.js";
@@ -31,39 +35,48 @@ function loadComment() {
   s.setAttribute("async", true);
   document.body.appendChild(s);
 }
-function load() {
-  var sdconv = new showdown.Converter({
-    simplifiedAutoLink: true,
-    strikethrough: true,
-    tables: true,
-  });
-  App.classList.add("markdown-body");
+async function getData() {
   path = path === "/" ? "/README.md" : path || "/README.md";
-  if (window.location.href !== "https://creco.today/" && !domain[alias]) {
+  if (is404) {
     path = "/404/README.md";
   }
   let target = `${domain[alias] || domain["main"]}${path}`;
   if (window.location.search.indexOf("test") !== -1) {
     target = domain["leetcode"] + "/day-01.md";
   }
-  fetch(target)
-    .then((response) => response.text())
-    .then((data) => {
-      const title =
-        pathname
-          .split("/")
-          .filter((e) => e)
-          .pop() || "CRECO";
-      const prefix = alias.toUpperCase() || "HOME";
-      document.title = `${prefix} | ${title}`;
-      App.innerHTML = sdconv.makeHtml(data);
-      hljs.highlightAll();
-      if (
-        !(window.location.href !== "https://creco.today/" && !domain[alias])
-      ) {
-        loadComment();
-      }
-    });
+  const res = await fetch(target);
+  const data = await res.text();
+  if (data.indexOf("AccessDenied") !== -1) {
+    target += "README.md";
+    const res = await fetch(target);
+    const data = await res.text();
+    return data;
+  }
+  return data;
+}
+
+async function load() {
+  var sdconv = new showdown.Converter({
+    simplifiedAutoLink: true,
+    strikethrough: true,
+    tables: true,
+  });
+  App.classList.add("markdown-body");
+
+  const data = await getData();
+
+  const title =
+    pathname
+      .split("/")
+      .filter((e) => e)
+      .pop() || "CRECO";
+  const prefix = alias.toUpperCase() || "HOME";
+  document.title = `${prefix} | ${title}`;
+  App.innerHTML = sdconv.makeHtml(data);
+  hljs.highlightAll();
+  if (!is404) {
+    loadComment();
+  }
 }
 
 const Label = (className, html, fc) => {
