@@ -57,7 +57,9 @@ function load() {
       document.title = `${prefix} | ${title}`;
       App.innerHTML = sdconv.makeHtml(data);
       hljs.highlightAll();
-      if (domain[alias]) {
+      if (
+        !(window.location.href !== "https://creco.today/" && !domain[alias])
+      ) {
         loadComment();
       }
     });
