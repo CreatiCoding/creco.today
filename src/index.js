@@ -19,6 +19,17 @@ const domain = {
   main: "https://data.creco.today/CreatiCoding",
   about: "https://data.creco.today/about",
 };
+function loadComment() {
+  document.body.innerHTML += `<script
+      src="https://utteranc.es/client.js"
+      repo="CreatiCoding/creco.today"
+      issue-term="pathname"
+      label="💬"
+      theme="github-light"
+      crossorigin="anonymous"
+      async
+    ></script>`;
+}
 function load() {
   var sdconv = new showdown.Converter({
     simplifiedAutoLink: true,
@@ -47,6 +58,9 @@ function load() {
       document.title = `${prefix} | ${title}`;
       App.innerHTML = sdconv.makeHtml(data);
       hljs.highlightAll();
+      if (domain[alias]) {
+        loadComment();
+      }
     });
 }
 
