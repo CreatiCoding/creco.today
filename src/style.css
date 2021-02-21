@@ -36,6 +36,12 @@ body {
   background: #ffffff;
 }
 
+#header .home {
+  display: inline;
+  float: left;
+  font-size: 23px;
+  cursor: pointer;
+}
 #header .text {
   font-size: 16px;
   font-weight: bold;
@@ -45,15 +51,21 @@ body {
   padding-top: 2px;
 }
 #header .name {
-  padding-left: 5px;
+  margin-left: 10px;
   float: left;
 }
 #header .share {
-  padding-left: 5px;
   float: right;
 }
-#header img {
+#header .profile {
+  margin-left: 10px;
+  cursor: pointer;
+  min-width: 32px;
+  float: left;
+}
+#header .profile img {
   width: 32px;
   border-radius: 16px;
-  float: left;
+  display: inline-block;
+  vertical-align: middle;
 }

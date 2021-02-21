@@ -65,8 +65,6 @@ function load() {
     });
 }
 
-const profile = new Image();
-profile.src = Profile;
 const Label = (className, html, fc) => {
   const el = document.createElement("div");
   el.innerHTML = html;
@@ -74,15 +72,34 @@ const Label = (className, html, fc) => {
   el.onclick = fc;
   return el;
 };
+const ImageTag = (className, src, fc) => {
+  const el = document.createElement("div");
+  const image = new Image();
+  image.src = src;
+  el.append(image);
+  el.className = className;
+  el.onclick = fc;
+  return el;
+};
+
 const Wrapper = document.createElement("div");
 Wrapper.style = "max-width: 760px;margin: 0 auto;";
-const LeftHeader = Label("", "", function () {
-  window.location.href = "https://github.com/CreatiCoding";
-});
+
+const LeftHeader = Label("", "", function () {});
 const RightHeader = Label("share text", "About Me", function () {
   window.location.href = "https://creco.today/about";
 });
-LeftHeader.append(profile, Label("name text", "CreatiCoding"));
+LeftHeader.append(
+  Label("home", "🏠", function () {
+    window.location.href = "https://creco.today";
+  }),
+  ImageTag("profile", Profile, function () {
+    window.location.href = "https://github.com/CreatiCoding";
+  }),
+  Label("name text", "CreatiCoding", function () {
+    window.location.href = "https://creco.today";
+  })
+);
 Header.appendChild(Wrapper).append(LeftHeader, RightHeader);
 
 load();
