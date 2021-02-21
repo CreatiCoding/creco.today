@@ -27,7 +27,7 @@ function load() {
   });
   App.classList.add("markdown-body");
   path = path === "/" ? "/README.md" : path || "/README.md";
-  let target = `${domain[alias || "main"]}${path}`;
+  let target = `${domain[alias] || domain["main"]}${path}`;
   if (window.location.search.indexOf("test") !== -1) {
     target = domain["leetcode"] + "/day-01.md";
   }
