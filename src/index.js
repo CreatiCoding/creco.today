@@ -18,6 +18,7 @@ const domain = {
   leetcode: "https://data.creco.today/DailyLeetCodeJS",
   main: "https://data.creco.today/CreatiCoding",
   about: "https://data.creco.today/about",
+  blog: "https://data.creco.today/blog",
 };
 function loadComment() {
   const s = document.createElement("script");
