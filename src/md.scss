@@ -5,9 +5,12 @@ div.markdown-body {
     border-left: solid 4px greenyellow;
   }
   h2 {
+    display: inline-block;
     border-bottom: unset;
     text-decoration: underline 4px;
     text-decoration-color: lightgreen;
+    margin: 10px 0;
+    word-break: break-word;
   }
   h1 {
     padding: 0;
@@ -15,6 +18,14 @@ div.markdown-body {
     text-decoration: underline;
     text-decoration-color: lightgreen;
     text-underline-offset: 4px;
+    margin: 10px 0;
+    word-break: keep-all;
+  }
+  h3,
+  h4 {
+    display: inline-block;
+    margin: 10px 0;
+    word-break: break-word;
   }
   pre {
     code {
@@ -22,7 +33,18 @@ div.markdown-body {
       border-radius: 10px;
     }
   }
+  blockquote {
+    border-left: 5px solid #8ee8a1;
+    background: #c3f2cc;
+    padding: 5px;
+    margin: 0;
+    p {
+      margin: 5px;
+    }
+  }
   p {
+    margin: 0;
+    word-break: break-word;
     img {
       max-width: 100%;
     }
