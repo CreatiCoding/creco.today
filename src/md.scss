@@ -5,7 +5,6 @@ div.markdown-body {
     border-left: solid 4px greenyellow;
   }
   h2 {
-    display: inline-block;
     border-bottom: unset;
     text-decoration: underline 4px;
     text-decoration-color: lightgreen;
@@ -37,7 +36,7 @@ div.markdown-body {
     border-left: 5px solid #8ee8a1;
     background: #c3f2cc;
     padding: 5px;
-    margin: 0;
+    margin: 5px 0;
     p {
       margin: 5px;
     }
