@@ -42,7 +42,7 @@ async function getData() {
   }
   let target = `${domain[alias] || domain["main"]}${path}`;
   if (window.location.search.indexOf("test") !== -1) {
-    target = domain["leetcode"] + "/day-01.md";
+    target = domain["about"] + "/README.md";
   }
   const res = await fetch(target);
   const data = await res.text();
