@@ -104,3 +104,42 @@ div.markdown-body {
     transform: rotate(0deg);
   }
 }
+@keyframes checkcheck-hover {
+  0% {
+    transform: rotate(4deg) scale(1.2);
+  }
+  10% {
+    transform: rotate(-2deg) scale(1.2);
+  }
+  20% {
+    transform: rotate(4deg) scale(1.2);
+  }
+  30% {
+    transform: rotate(-2deg) scale(1.2);
+  }
+  40% {
+    transform: rotate(4deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(-2deg) scale(1.2);
+  }
+  60% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0deg) scale(1.2);
+  }
+}
+.check-hover-scale {
+  transition: transform 300ms;
+}
+.check-hover-scale:hover {
+  animation: checkcheck-hover ease-in-out 2s infinite alternate;
+}
+
+.hover-scale {
+  transition: transform 300ms;
+}
+.hover-scale:hover {
+  transform: scale(1.2);
+}
