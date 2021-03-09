@@ -75,3 +75,26 @@ div.markdown-body {
     }
   }
 }
+.ani-checkcheck {
+  animation: checkcheck ease-in-out 2s infinite alternate;
+}
+@keyframes checkcheck {
+  0% {
+    transform: rotate(4deg);
+  }
+  20% {
+    transform: rotate(-2deg);
+  }
+  40% {
+    transform: rotate(4deg);
+  }
+  60% {
+    transform: rotate(-2deg);
+  }
+  80% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
