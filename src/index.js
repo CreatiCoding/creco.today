@@ -114,9 +114,14 @@ LeftHeader.append(
   ImageTag("profile", Profile, function () {
     window.location.href = "https://github.com/CreatiCoding";
   }),
-  Label("name text ani-checkcheck", "CreatiCoding", function () {
-    window.location.href = "https://creco.today";
-  })
+  Label(
+    "name text hover-scale",
+    "<div class='ani-checkcheck'>CreatiCoding</div>",
+    function () {
+      window.location.href = "https://github.com/CreatiCoding";
+      // window.location.href = "https://creco.today";
+    }
+  )
 );
 Header.appendChild(Wrapper).append(LeftHeader, RightHeader);
 
