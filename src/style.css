@@ -81,3 +81,10 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
+
+.f-20 {
+  font-size: 20px;
+}
+.f-red {
+  color: rgb(187, 10, 10);
+}
