@@ -5,6 +5,9 @@ div.markdown-body {
     padding-left: 1rem;
     // border-left: solid 4px greenyellow;
   }
+  li:before {
+    content: " - ";
+  }
   h2 {
     border-bottom: unset;
     text-decoration: underline 4px;
