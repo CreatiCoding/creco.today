@@ -35,6 +35,10 @@ div.markdown-body {
     blockquote {
       background: white;
       border: 3px solid #8ee8a1;
+      p {
+        white-space: pre-wrap;
+        text-indent: 1rem;
+      }
     }
     border: 4px solid #8ee8a1;
     border-radius: 20px;
@@ -43,8 +47,6 @@ div.markdown-body {
     margin: 10px 0;
     p {
       margin: 5px;
-      white-space: pre-wrap;
-      text-indent: 1rem;
     }
     h2,
     h3 {
