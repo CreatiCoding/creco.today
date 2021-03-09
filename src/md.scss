@@ -1,8 +1,9 @@
 div.markdown-body {
   ol,
   ul {
-    padding-left: 1.5em;
-    border-left: solid 4px greenyellow;
+    list-style-type: none;
+    padding-left: 1rem;
+    // border-left: solid 4px greenyellow;
   }
   h2 {
     border-bottom: unset;
