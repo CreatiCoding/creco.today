@@ -20,7 +20,7 @@ body {
   padding-top: 60px;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 768px) {
   #app {
     max-width: 760px;
   }
@@ -28,10 +28,7 @@ body {
     padding: 10px 75px 10px 75px;
   }
 }
-@media (max-width: 760px) {
-  /* body {
-    background: #ebebeb;
-  } */
+@media (max-width: 768px) {
   #app {
     background: #ffffff;
     margin: 0 10px;
