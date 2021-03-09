@@ -82,19 +82,25 @@ div.markdown-body {
   0% {
     transform: rotate(4deg);
   }
+  10% {
+    transform: rotate(-2deg);
+  }
   20% {
+    transform: rotate(4deg);
+  }
+  30% {
     transform: rotate(-2deg);
   }
   40% {
     transform: rotate(4deg);
   }
-  60% {
+  50% {
     transform: rotate(-2deg);
   }
-  80% {
-    transform: rotate(4deg);
+  60% {
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(-2deg);
+    transform: rotate(0deg);
   }
 }
