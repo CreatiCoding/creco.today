@@ -9,7 +9,9 @@ div.markdown-body {
     &:before {
       content: " - ";
     }
-    display: inline;
+    p {
+      display: inline;
+    }
   }
   h2 {
     border-bottom: unset;
