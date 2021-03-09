@@ -114,7 +114,7 @@ LeftHeader.append(
   ImageTag("profile", Profile, function () {
     window.location.href = "https://github.com/CreatiCoding";
   }),
-  Label("name text", "CreatiCoding", function () {
+  Label("name text ani-checkcheck", "CreatiCoding", function () {
     window.location.href = "https://creco.today";
   })
 );
