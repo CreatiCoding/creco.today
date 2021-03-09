@@ -5,8 +5,11 @@ div.markdown-body {
     padding-left: 1rem;
     // border-left: solid 4px greenyellow;
   }
-  li:before {
-    content: " - ";
+  li {
+    &:before {
+      content: " - ";
+    }
+    display: inline;
   }
   h2 {
     border-bottom: unset;
