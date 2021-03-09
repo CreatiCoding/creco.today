@@ -39,6 +39,8 @@ div.markdown-body {
     margin: 10px 0;
     p {
       margin: 5px;
+      white-space: pre-wrap;
+      text-indent: 1rem;
     }
   }
   p {
