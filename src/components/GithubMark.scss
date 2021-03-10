@@ -1,0 +1,50 @@
+.github-mark {
+  float: right;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 16px;
+  background-color: white;
+  transition: none;
+  svg {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    transform: scale(1.05, -1.05) translate(0, 0.5px);
+    path {
+      fill: #1b1817 !important;
+    }
+  }
+  &:hover {
+    background-color: #1b1817;
+    transition: none;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 8px;
+    border-radius: 20px;
+    svg {
+      path {
+        fill: white !important;
+      }
+    }
+  }
+}
+body.dark {
+  .github-mark {
+    background-color: #1b1817;
+    transition: none;
+    svg {
+      path {
+        fill: white !important;
+      }
+    }
+    &:hover {
+      background-color: white;
+      transition: none;
+      svg {
+        path {
+          fill: #1b1817 !important;
+        }
+      }
+    }
+  }
+}
