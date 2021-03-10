@@ -1,0 +1,65 @@
+.dark-mode {
+  float: right;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 2px solid #282c35;
+  transition: border ease 0.4s;
+  svg {
+    position: absolute;
+    cursor: pointer;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    transition: all 0.4s;
+    g {
+      transition: stroke 0.4s;
+      stroke: #282c35;
+      path {
+        transition: fill 0.4s;
+        fill: #282c35;
+      }
+    }
+  }
+  &:hover {
+    background-color: #282c35;
+    transition: background-color ease 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.75) 0 0 4px;
+    svg {
+      animation: weaving ease-in-out 0.7s;
+      g {
+        stroke: #282c35;
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+}
+body.dark {
+  .dark-mode {
+    border: 2px solid white;
+    svg {
+      g {
+        stroke: white;
+        path {
+          fill: white;
+        }
+      }
+    }
+    &:hover {
+      background-color: white;
+      svg {
+        g {
+          stroke: white;
+          path {
+            fill: #282c35;
+          }
+        }
+      }
+    }
+  }
+}
