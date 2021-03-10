@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
+    "babel-polyfill": "babel-polyfill",
     app: "./src/index.js",
   },
   plugins: [
@@ -25,6 +26,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+        exclude: /(node_modules)/,
+      },
       // 스타일
       {
         test: /\.css$/i,
