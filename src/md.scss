@@ -1,4 +1,12 @@
 div.markdown-body {
+  a {
+    border: 1px solid #8ee8a1;
+    padding: 4px 8px;
+    border-radius: 10px;
+    background: #8ee8a144;
+    line-height: 2rem;
+    word-break: break-all;
+  }
   ol,
   ul {
     list-style-type: none;
@@ -42,7 +50,7 @@ div.markdown-body {
   }
   blockquote {
     blockquote {
-      background: white;
+      background: #ffffff22;
       border: 3px solid #8ee8a1;
       p {
         white-space: pre-wrap;
@@ -64,6 +72,7 @@ div.markdown-body {
       display: block;
       text-align: center;
       white-space: pre-line;
+      color: blue;
     }
     h2 {
       margin: 10px 0 20px 0;
@@ -74,6 +83,15 @@ div.markdown-body {
     word-break: break-word;
     img {
       max-width: 100%;
+    }
+  }
+}
+
+body.dark div.markdown-body {
+  blockquote {
+    h2,
+    h3 {
+      color: yellow;
     }
   }
 }

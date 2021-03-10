@@ -1,9 +1,11 @@
 import showdown from "showdown";
-import "./style.css";
-import Profile from "./profile.png";
+import "./style.scss";
 import "./md.scss";
 import hljs from "highlight.js";
 import "highlight.js/scss/agate.scss";
+import DarkToggle from "./DarkToggle.js";
+import GithubMark from "./components/GithubMark.js";
+
 import "./gtag.js";
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
@@ -107,43 +109,20 @@ const Wrapper = document.createElement("div");
 Wrapper.style = "max-width: 760px;margin: 0 auto;";
 
 const LeftHeader = Label("", "", function () {});
-const RightHeader = Label("share text", "About Me", function () {
-  window.location.href = "https://creco.today/about";
-});
+const DarkModeBtn = Label("dark-mode", "", function () {});
+const GithubMarkBtn = Label("github-mark mr-10", "", function () {});
 LeftHeader.append(
-  Label("home", "🏠", function () {
-    window.location.href = "https://creco.today";
-  }),
-  ImageTag("profile", Profile, function () {
-    window.location.href = "https://github.com/CreatiCoding";
-  }),
   Label(
     "name text hover-scale",
     "<div class='ani-checkcheck'>CreatiCoding</div>",
     function () {
       window.location.href = "https://github.com/CreatiCoding";
-      // window.location.href = "https://creco.today";
     }
   )
 );
-Header.appendChild(Wrapper).append(LeftHeader, RightHeader);
+Header.appendChild(Wrapper).append(LeftHeader, DarkModeBtn, GithubMarkBtn);
 
-load();
-window.addEventListener(
-  "hashchange",
-  function () {
-    load();
-    window.scroll(0, 0);
-  },
-  false
-);
-
-if (window.location.search.indexOf("dark") !== -1) {
-  document.body.classList.add("dark");
-}
-// if (module.hot) {
-//   module.hot.accept("./print.js", function () {
-//     console.log("Accepting the updated printMe module!");
-//     printMe();
-//   });
-// }
+load().then(() => {
+  new DarkToggle({ $target: document.querySelector(".dark-mode") });
+  new GithubMark({ $target: document.querySelector(".github-mark") });
+});
