@@ -107,3 +107,6 @@ body.dark > .shadow-8 {
 body.dark > div.markdown-body > blockquote {
   box-shadow: rgb(255, 255, 255, 0.75) 0px 2px 4px;
 }
+body.dark > a {
+  color: rgba(255, 255, 255, 0.75);
+}

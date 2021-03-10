@@ -10,7 +10,10 @@ if (process.env.NODE_ENV !== "production") {
 }
 const App = document.querySelector("#app");
 const Header = document.querySelector("#header");
-const url = window.location.href.replace(window.location.origin, "");
+const url = window.location.href
+  .replace(window.location.origin, "")
+  .split("?")
+  .shift();
 const alias = url.split("/")[1];
 let path = url.replace(`/${alias}`, "");
 const pathname = window.location.pathname;
