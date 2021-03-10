@@ -81,6 +81,9 @@ body {
 .f-red {
   color: rgb(255, 23, 23);
 }
+body {
+  background-color: #f7f6f2;
+}
 body * {
   transition: background-color ease-in 0.5s, color ease 0.1s;
 }

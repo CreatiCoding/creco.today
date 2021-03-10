@@ -49,7 +49,7 @@ async function getData() {
   }
   let target = `${domain[alias] || domain["main"]}${path}`;
   if (window.location.search.indexOf("test") !== -1) {
-    target = domain["main"] + "/README.md";
+    target = domain["about"] + "/README.md";
   }
   const res = await fetch(target);
   const data = await res.text();
