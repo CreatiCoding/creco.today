@@ -135,6 +135,9 @@ window.addEventListener(
   false
 );
 
+if (window.location.search.indexOf("dark") !== -1) {
+  document.body.classList.add("dark");
+}
 // if (module.hot) {
 //   module.hot.accept("./print.js", function () {
 //     console.log("Accepting the updated printMe module!");
