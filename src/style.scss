@@ -130,7 +130,7 @@ body.dark a {
   }
 }
 @keyframes weaving {
-  00% {
+  0% {
     left: 50%;
   }
   50% {
@@ -147,5 +147,25 @@ body.dark a {
   }
   100% {
     left: 50%;
+  }
+}
+@keyframes floating {
+  0% {
+    top: 70%;
+  }
+  20% {
+    top: 50%;
+  }
+  40% {
+    top: 70%;
+  }
+  60% {
+    top: 50%;
+  }
+  80% {
+    top: 70%;
+  }
+  100% {
+    top: 50%;
   }
 }

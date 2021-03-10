@@ -3,8 +3,10 @@ import "./style.scss";
 import "./md.scss";
 import hljs from "highlight.js";
 import "highlight.js/scss/agate.scss";
-import DarkToggle from "./DarkToggle.js";
+import DarkToggle from "./components/DarkToggle.js";
 import GithubMark from "./components/GithubMark.js";
+import ProfileImg from "./components/ProfileImg.js";
+import profile from "./profile.png";
 
 import "./gtag.js";
 if (process.env.NODE_ENV !== "production") {
@@ -47,7 +49,7 @@ async function getData() {
   }
   let target = `${domain[alias] || domain["main"]}${path}`;
   if (window.location.search.indexOf("test") !== -1) {
-    target = domain["about"] + "/README.md";
+    target = domain["main"] + "/README.md";
   }
   const res = await fetch(target);
   const data = await res.text();
@@ -111,6 +113,7 @@ Wrapper.style = "max-width: 760px;margin: 0 auto;";
 const LeftHeader = Label("", "", function () {});
 const DarkModeBtn = Label("dark-mode", "", function () {});
 const GithubMarkBtn = Label("github-mark mr-10", "", function () {});
+const ProfileImgBtn = Label("profile-img-btn mr-10", "", function () {});
 LeftHeader.append(
   Label(
     "name text hover-scale",
@@ -120,9 +123,18 @@ LeftHeader.append(
     }
   )
 );
-Header.appendChild(Wrapper).append(LeftHeader, DarkModeBtn, GithubMarkBtn);
+Header.appendChild(Wrapper).append(
+  LeftHeader,
+  DarkModeBtn,
+  GithubMarkBtn,
+  ProfileImgBtn
+);
 
 load().then(() => {
   new DarkToggle({ $target: document.querySelector(".dark-mode") });
   new GithubMark({ $target: document.querySelector(".github-mark") });
+  new ProfileImg({
+    $target: document.querySelector(".profile-img-btn"),
+    data: { profile },
+  });
 });
