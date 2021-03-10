@@ -17,7 +17,7 @@ export default class ProfileImg {
     this.$target.innerHTML = `
         <img class="profile" src="${profile}" alt="CreatiCoding" />
         <img class="pointer" src="${pointer}" alt="arrow" />
-        <img class="crown" src="${crown}" alt="👑" />
+        <div class="crown"><img src="${crown}" alt="👑" /></div>
     `;
     this.$target.addEventListener("click", function () {
       window.location.href = "/about";

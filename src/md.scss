@@ -96,59 +96,7 @@ body.dark div.markdown-body {
   }
 }
 .ani-checkcheck {
-  animation: checkcheck ease-in-out 2s infinite alternate;
-}
-@keyframes checkcheck {
-  0% {
-    transform: rotate(4deg);
-  }
-  10% {
-    transform: rotate(-2deg);
-  }
-  20% {
-    transform: rotate(4deg);
-  }
-  30% {
-    transform: rotate(-2deg);
-  }
-  40% {
-    transform: rotate(4deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-@keyframes checkcheck-hover {
-  0% {
-    transform: rotate(4deg) scale(1.2);
-  }
-  10% {
-    transform: rotate(-2deg) scale(1.2);
-  }
-  20% {
-    transform: rotate(4deg) scale(1.2);
-  }
-  30% {
-    transform: rotate(-2deg) scale(1.2);
-  }
-  40% {
-    transform: rotate(4deg) scale(1.2);
-  }
-  50% {
-    transform: rotate(-2deg) scale(1.2);
-  }
-  60% {
-    transform: rotate(0deg) scale(1.2);
-  }
-  100% {
-    transform: rotate(0deg) scale(1.2);
-  }
+  animation: checkcheck ease-in-out 5s infinite alternate;
 }
 .check-hover-scale {
   transition: transform 300ms;

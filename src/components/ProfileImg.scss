@@ -23,12 +23,16 @@
     position: absolute;
     animation: floating ease-in-out 2s infinite alternate;
   }
-  img.crown {
+  div.crown {
     width: 24px;
+    transform: rotate(-40deg);
     position: absolute;
     top: -40%;
     left: -15%;
-    transform: rotate(-40deg);
+    img {
+      width: 100%;
+      animation: checkcheck ease-in-out 1s infinite alternate;
+    }
   }
 
   &:hover {
