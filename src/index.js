@@ -14,6 +14,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 const App = document.querySelector("#app");
 const Header = document.querySelector("#header");
+App.classList.add("hide");
+Header.classList.add("hide");
+
 const url = window.location.href
   .replace(window.location.origin, "")
   .split("?")
@@ -97,15 +100,6 @@ const Label = (className, html, fc) => {
   el.onclick = fc;
   return el;
 };
-const ImageTag = (className, src, fc) => {
-  const el = document.createElement("div");
-  const image = new Image();
-  image.src = src;
-  el.append(image);
-  el.className = className;
-  el.onclick = fc;
-  return el;
-};
 
 const Wrapper = document.createElement("div");
 Wrapper.style = "max-width: 760px;margin: 0 auto;";
@@ -137,4 +131,6 @@ load().then(() => {
     $target: document.querySelector(".profile-img-btn"),
     data: { profile },
   });
+  App.classList.remove("hide");
+  Header.classList.remove("hide");
 });
