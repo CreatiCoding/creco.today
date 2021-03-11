@@ -131,4 +131,11 @@ load().then(() => {
   });
   App.classList.remove("hide");
   Header.classList.remove("hide");
+
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: Dark)").matches
+  ) {
+    document.body.classList.add("dark");
+  }
 });
