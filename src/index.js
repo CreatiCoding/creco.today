@@ -14,8 +14,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 const App = document.querySelector("#app");
 const Header = document.querySelector("#header");
-App.classList.add("hide");
-Header.classList.add("hide");
 
 const url = window.location.href
   .replace(window.location.origin, "")
