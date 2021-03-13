@@ -1,6 +1,19 @@
 .hide {
   display: none;
 }
+body.print,
+body.print * {
+  background: unset !important;
+  background-color: unset !important;
+  color: black !important;
+  border: 0 !important;
+  box-shadow: unset !important;
+  text-align: unset !important;
+  .header {
+    display: none;
+  }
+}
+
 ul,
 ol,
 li {

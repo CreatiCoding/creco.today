@@ -7,13 +7,29 @@ import DarkToggle from "./components/DarkToggle.js";
 import GithubMark from "./components/GithubMark.js";
 import ProfileImg from "./components/ProfileImg.js";
 import profile from "./profile.png";
-
 import "./gtag.js";
+
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
 const App = document.querySelector("#app");
 const Header = document.querySelector("#header");
+
+const loadScript = function (v, t = "script", k = "src", e) {
+  return new Promise((r, j) => {
+    try {
+      const el = document.createElement(t);
+      el[k] = v;
+      if (e && e[0]) el[e[0]] = e[1];
+      el.addEventListener("load", () => r(true));
+      document.head.appendChild(el);
+    } catch (e) {
+      console.error(e);
+      j(e);
+      throw e;
+    }
+  });
+};
 
 const url = window.location.href
   .replace(window.location.origin, "")
@@ -85,6 +101,8 @@ async function load() {
   const prefix = alias.toUpperCase() || "HOME";
   document.title = `${prefix} | ${title}`;
   App.innerHTML = sdconv.makeHtml(data);
+  // document.body.classList.add("print");
+
   hljs.highlightAll();
   if (!is404) {
     loadComment();
@@ -111,7 +129,7 @@ LeftHeader.append(
     "name text hover-scale",
     "<div class='ani-checkcheck'>CreatiCoding</div>",
     function () {
-      window.location.href = "https://github.com/CreatiCoding";
+      window.location.href = "https://creco.today/";
     }
   )
 );
@@ -138,4 +156,10 @@ load().then(() => {
   ) {
     document.body.classList.add("dark");
   }
+
+  // loadScript(
+  //   "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"
+  // ).then(() => {
+  //   var worker = html2pdf(document.body.outerHTMLa).from().save();
+  // });
 });
