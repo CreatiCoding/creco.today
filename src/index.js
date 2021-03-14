@@ -74,7 +74,11 @@ async function getData() {
     target =
       domain["local"] +
       "/" +
-      window.location.search.split("?")[1].split("=")[1];
+      window.location.search
+        .split("?")[1]
+        .split("&")
+        .map((e) => e.split("="))
+        .find((e) => e[0] === "local")[1];
   }
   const res = await fetch(target);
   const data = await res.text();
@@ -168,6 +172,15 @@ load().then(() => {
   // loadScript(
   //   "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"
   // ).then(() => {
-  //   var worker = html2pdf(document.body.outerHTMLa).from().save();
+  //   // var worker = html2pdf(document.body.outerHTMLa).from().save();
   // });
+
+  if (window.location.search.indexOf("print=1") !== -1) {
+    document.body.classList.add("print");
+  }
+  if (window.location.search.indexOf("dark=1") !== -1) {
+    document.body.classList.add("dark");
+  } else {
+    document.body.classList.remove("dark");
+  }
 });

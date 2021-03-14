@@ -2,21 +2,23 @@ div.markdown-body {
   code {
     border-radius: 10px;
     padding: 0.5em;
-    background: #333;
-    color: white;
+    color: black;
+    border: 1px solid #8ee8a1;
+    background: #8ee8a144;
+    margin: 4px;
+    display: inline-block;
   }
   a {
     border: 1px solid #8ee8a1;
     padding: 4px 8px;
     border-radius: 10px;
     background: #8ee8a144;
-    line-height: 2rem;
     word-break: break-all;
   }
   ol,
   ul {
     list-style-type: none;
-    padding-left: 1rem;
+    padding: 5px 1rem;
     // border-left: solid 4px greenyellow;
   }
   li {
@@ -45,7 +47,7 @@ div.markdown-body {
   h3,
   h4 {
     display: inline-block;
-    margin: 10px 0;
+    margin: 10px 0 0 0;
     word-break: break-word;
   }
   pre {
@@ -68,15 +70,17 @@ div.markdown-body {
     border: 4px solid #8ee8a1;
     border-radius: 20px;
     background: #c3f2cc20;
-    padding: 10px;
+    padding: 15px 10px;
     margin: 10px 0;
     p {
-      margin: 5px;
+      text-indent: 8px;
+      padding: 10px !important;
+      margin: 0;
     }
     h2,
     h3 {
       display: block;
-      text-align: center;
+      padding-left: 10px;
       white-space: pre-line;
       color: blue;
     }
@@ -86,6 +90,7 @@ div.markdown-body {
   }
   p {
     margin: 10px 0;
+    white-space: pre-line;
     word-break: break-word;
     img {
       max-width: 100%;
@@ -94,6 +99,9 @@ div.markdown-body {
 }
 
 body.dark div.markdown-body {
+  code {
+    color: white;
+  }
   blockquote {
     h2,
     h3 {

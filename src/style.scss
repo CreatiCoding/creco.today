@@ -9,15 +9,39 @@ body.print * {
   border: 0 !important;
   box-shadow: unset !important;
   text-align: unset !important;
+  text-decoration: none !important;
+  a {
+    text-decoration: underline !important;
+  }
   .header {
     display: none;
+  }
+  code {
+    font-size: 16px;
+    vertical-align: text-top;
+    font-weight: 600;
+  }
+  h3 {
+    margin: 30px 0 0 0;
+  }
+  blockquote {
+    border: 1px solid !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 400;
   }
 }
 
 ul,
-ol,
-li {
+ol {
   margin: 0;
+}
+li {
+  margin: 10px 0;
 }
 h1,
 h2,
