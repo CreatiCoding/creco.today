@@ -43,6 +43,8 @@ const domain = {
   main: "https://data.creco.today/CreatiCoding",
   about: "https://data.creco.today/about",
   blog: "https://data.creco.today/blog",
+  blog: "https://data.creco.today/blog",
+  local: "http://localhost:5000",
 };
 const is404 =
   window.location.href !== "https://creco.today/" &&
@@ -67,6 +69,12 @@ async function getData() {
   let target = `${domain[alias] || domain["main"]}${path}`;
   if (window.location.search.indexOf("test") !== -1) {
     target = domain["about"] + "/README.md";
+  }
+  if (window.location.search.indexOf("local") !== -1) {
+    target =
+      domain["local"] +
+      "/" +
+      window.location.search.split("?")[1].split("=")[1];
   }
   const res = await fetch(target);
   const data = await res.text();
