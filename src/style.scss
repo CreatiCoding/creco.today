@@ -10,6 +10,10 @@ body.print * {
   box-shadow: unset !important;
   text-align: unset !important;
   text-decoration: none !important;
+
+  .app {
+    padding-top: 30px;
+  }
   a {
     text-decoration: underline !important;
   }
