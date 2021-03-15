@@ -37,6 +37,9 @@ body.print * {
   h5 {
     font-weight: 400;
   }
+  .no-print {
+    display: none;
+  }
 }
 
 ul,
