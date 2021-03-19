@@ -69,8 +69,7 @@ async function getData() {
   let target = `${domain[alias] || domain["main"]}${path}`;
   if (window.location.search.indexOf("test") !== -1) {
     target = domain["about"] + "/README.md";
-  }
-  if (window.location.search.indexOf("local") !== -1) {
+  } else if (window.location.search.indexOf("local") !== -1) {
     target =
       domain["local"] +
       "/" +
@@ -79,6 +78,12 @@ async function getData() {
         .split("&")
         .map((e) => e.split("="))
         .find((e) => e[0] === "local")[1];
+  } else if (window.location.search.indexOf("url") !== -1) {
+    target = window.location.search
+      .split("?")[1]
+      .split("&")
+      .map((e) => e.split("="))
+      .find((e) => e[0] === "url")[1];
   }
   const res = await fetch(target);
   const data = await res.text();
