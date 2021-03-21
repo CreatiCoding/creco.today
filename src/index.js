@@ -175,6 +175,7 @@ load().then(() => {
 
   if (window.location.search.indexOf("print=1") !== -1) {
     document.body.classList.add("print");
+    document.body.classList.remove("dark");
   }
   if (window.location.search.indexOf("dark=1") !== -1) {
     document.body.classList.add("dark");
