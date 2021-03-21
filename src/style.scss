@@ -48,6 +48,9 @@ body.print * {
   .no-print {
     display: none;
   }
+  .no-print-next + * {
+    display: none;
+  }
   .utterances {
     display: none;
   }
