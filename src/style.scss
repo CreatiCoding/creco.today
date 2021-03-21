@@ -29,6 +29,9 @@ body.print * {
     vertical-align: text-top;
     font-weight: 600;
   }
+  table code {
+    vertical-align: unset;
+  }
   h3 {
     margin: 30px 0 0 0;
   }
