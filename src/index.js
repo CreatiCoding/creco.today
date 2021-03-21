@@ -173,10 +173,6 @@ load().then(() => {
   //   // var worker = html2pdf(document.body.outerHTMLa).from().save();
   // });
 
-  if (window.location.search.indexOf("print=1") !== -1) {
-    document.body.classList.add("print");
-    document.body.classList.remove("dark");
-  }
   if (window.location.search.indexOf("dark=1") !== -1) {
     document.body.classList.add("dark");
   } else {
@@ -188,5 +184,9 @@ load().then(() => {
     } else {
       document.body.classList.remove("dark");
     }
+  }
+  if (window.location.search.indexOf("print=1") !== -1) {
+    document.body.classList.add("print");
+    document.body.classList.remove("dark");
   }
 });
