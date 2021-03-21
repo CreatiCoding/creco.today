@@ -167,13 +167,6 @@ load().then(() => {
   App.classList.remove("hide");
   Header.classList.remove("hide");
 
-  if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: Dark)").matches
-  ) {
-    document.body.classList.add("dark");
-  }
-
   // loadScript(
   //   "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"
   // ).then(() => {
@@ -186,6 +179,13 @@ load().then(() => {
   if (window.location.search.indexOf("dark=1") !== -1) {
     document.body.classList.add("dark");
   } else {
-    document.body.classList.remove("dark");
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: Dark)").matches
+    ) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
   }
 });
