@@ -294,3 +294,24 @@ body.dark .reverse {
   transform: translate(0, -10px) scale(0.8);
   transform-origin: top left;
 }
+.va-b {
+  vertical-align: bottom;
+}
+.va-t {
+  vertical-align: top;
+}
+.f-i {
+  filter: invert(100%);
+}
+.badge {
+  display: inline-block;
+}
+.f-r {
+  float: right;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.c-p {
+  cursor: pointer;
+}
