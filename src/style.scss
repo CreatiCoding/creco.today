@@ -168,25 +168,25 @@ body.dark .reverse {
     margin-right: #{$i}px;
   }
   .ml-#{$i} {
-    margin-right: #{$i}px;
+    margin-left: #{$i}px;
   }
   .mt-#{$i} {
-    margin-right: #{$i}px;
+    margin-top: #{$i}px;
   }
   .mb-#{$i} {
-    margin-right: #{$i}px;
+    margin-bottom: #{$i}px;
   }
   .pr-#{$i} {
-    margin-right: #{$i}px;
+    padding-right: #{$i}px;
   }
   .pl-#{$i} {
-    margin-right: #{$i}px;
+    padding-left: #{$i}px;
   }
   .pt-#{$i} {
-    margin-right: #{$i}px;
+    padding-top: #{$i}px;
   }
   .pb-#{$i} {
-    margin-right: #{$i}px;
+    padding-bottom: #{$i}px;
   }
 }
 @keyframes weaving {
