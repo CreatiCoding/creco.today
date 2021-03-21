@@ -93,6 +93,11 @@ div.markdown-body {
       text-align: center;
       display: inline;
     }
+    table {
+      td {
+        white-space: break-spaces;
+      }
+    }
   }
   p {
     margin: 10px 0;
