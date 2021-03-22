@@ -6,9 +6,10 @@ import "highlight.js/scss/agate.scss";
 import DarkToggle from "./components/DarkToggle.js";
 import GithubMark from "./components/GithubMark.js";
 import ProfileImg from "./components/ProfileImg.js";
-import profile from "./profile.png";
 import "./gtag.js";
 
+const profile =
+  "https://avatars.githubusercontent.com/u/33514304?s=460&u=6b3e225b0b128d06895364b27b6598c119a39b77&v=4";
 if (process.env.NODE_ENV !== "production") {
   console.log("Looks like we are in development mode!");
 }
