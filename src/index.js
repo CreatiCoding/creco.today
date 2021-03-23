@@ -122,7 +122,8 @@ async function load() {
   // document.body.classList.add("print");
 
   hljs.highlightAll();
-  if (!is404) {
+  
+  if (!is404 && !document.querySelector("#not-comment")) {
     loadComment();
   }
 }
