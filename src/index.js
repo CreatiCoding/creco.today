@@ -122,7 +122,7 @@ async function load() {
   // document.body.classList.add("print");
 
   hljs.highlightAll();
-  
+
   if (!is404 && !document.querySelector("#not-comment")) {
     loadComment();
   }
@@ -191,4 +191,14 @@ load().then(() => {
     document.body.classList.add("print");
     document.body.classList.remove("dark");
   }
+
+  ((b) =>
+    document
+      .querySelectorAll("pre > code")
+      .forEach((e) => b.push(e.parentElement)) || b)([]).forEach(
+    (codeWrapper) => {
+      codeWrapper.style.minWidth = "100%";
+      codeWrapper.style.overflow = "scroll";
+    }
+  );
 });
