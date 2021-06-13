@@ -96,6 +96,13 @@ async function getData() {
     }
     const res = await fetch(target);
     const data = await res.text();
+
+    if (data.indexOf("AccessDenied") !== -1) {
+      target += ".md";
+      const res = await fetch(target);
+      const data = await res.text();
+      return data;
+    }
     return data;
   }
   return data;
