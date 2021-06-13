@@ -89,17 +89,17 @@ async function getData() {
   const res = await fetch(target);
   const data = await res.text();
   if (data.indexOf("AccessDenied") !== -1) {
+    let nextTarget = target;
     if (target.split("").pop() === "/") {
-      target += "README.md";
+      nextTarget += "README.md";
     } else {
-      target += "/README.md";
+      nextTarget += "/README.md";
     }
-    const res = await fetch(target);
+    const res = await fetch(nextTarget);
     const data = await res.text();
 
     if (data.indexOf("AccessDenied") !== -1) {
-      target += ".md";
-      const res = await fetch(target);
+      const res = await fetch(target + ".md");
       const data = await res.text();
       return data;
     }
