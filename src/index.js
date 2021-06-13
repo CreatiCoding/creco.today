@@ -44,7 +44,7 @@ const domain = {
   main: "https://data.creco.today/CreatiCoding",
   about: "https://data.creco.today/about",
   blog: "https://data.creco.today/blog",
-  blog: "https://data.creco.today/blog",
+  weekilearn: "https://data.creco.today/weekilearn",
   local: "http://localhost:5000",
 };
 const is404 =
