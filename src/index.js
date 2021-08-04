@@ -16,22 +16,6 @@ if (process.env.NODE_ENV !== "production") {
 const App = document.querySelector("#app");
 const Header = document.querySelector("#header");
 
-const loadScript = function (v, t = "script", k = "src", e) {
-  return new Promise((r, j) => {
-    try {
-      const el = document.createElement(t);
-      el[k] = v;
-      if (e && e[0]) el[e[0]] = e[1];
-      el.addEventListener("load", () => r(true));
-      document.head.appendChild(el);
-    } catch (e) {
-      console.error(e);
-      j(e);
-      throw e;
-    }
-  });
-};
-
 const url = window.location.href
   .replace(window.location.origin, "")
   .split("?")
@@ -47,10 +31,7 @@ const domain = {
   weekilearn: "https://data.creco.today/weekilearn",
   local: "http://localhost:5000",
 };
-const is404 =
-  window.location.href !== "https://creco.today/" &&
-  window.location.href !== "http://localhost:8080/" &&
-  !domain[alias];
+const is404 = window.location.pathname !== "/" && !domain[alias];
 function loadComment() {
   const s = document.createElement("script");
   s.src = "https://utteranc.es/client.js";
@@ -126,7 +107,6 @@ async function load() {
   const prefix = alias.toUpperCase() || "HOME";
   document.title = `${prefix} | ${title}`;
   App.innerHTML = sdconv.makeHtml(data);
-  // document.body.classList.add("print");
 
   hljs.highlightAll();
 
@@ -175,12 +155,6 @@ load().then(() => {
   });
   App.classList.remove("hide");
   Header.classList.remove("hide");
-
-  // loadScript(
-  //   "https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"
-  // ).then(() => {
-  //   // var worker = html2pdf(document.body.outerHTMLa).from().save();
-  // });
 
   if (window.location.search.indexOf("dark=1") !== -1) {
     document.body.classList.add("dark");
